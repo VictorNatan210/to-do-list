@@ -1,0 +1,18 @@
+<form (ngSubmit)="addTask()" class="app-form">
+  <div class="form-input">
+    <input 
+    type="text" 
+    name="Tarefa que irá ser adicionada." 
+    id="inputtext"
+    placeholder=""
+    [(ngModel)]="task"
+    [class.erro]="error"
+    />
+    <label for="inputtext">{{ labelContent }}</label>
+  </div>
+
+  <div class="form-button">
+    <input type="submit" [value]="submitBtnContent">
+    <input type="reset" [value]="resetBtnContent" (click)="clearField()">
+  </div>
+</form>

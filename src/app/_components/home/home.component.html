@@ -1,0 +1,22 @@
+<div class="layout">
+    <app-header></app-header>
+    <main class="app-main">
+        @if (showMessage) {
+            <div class="welcome-message">
+                <button class="btn-hide" (click)="hideMessage()">
+                    <i class="fas fa-eye-slash"></i> Esconder
+                </button>
+                <h3>👋 Bem-vindo ao seu To-Do List!</h3>
+                <p>Organize sua rotina, tire tarefas da cabeça e coloque tudo aqui.</p>
+                <p>Adicione coisas para fazer logo abaixo! 💪</p>
+            </div>
+        }
+        <div>
+            <app-form></app-form>
+            <button (click)="clear()">Limpar Dados</button>
+            @for (task of tasks; track $index) {
+                <p>{{ task }}</p>
+            }
+        </div>
+    </main>
+</div>
